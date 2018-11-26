@@ -85,6 +85,11 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_COPY_OUT_VENDOR := vendor
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
+# System as root
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
+#BOARD_KERNEL_CMDLINE += rootwait ro init=/init root=/dev/dm-0
+#BOARD_KERNEL_CMDLINE += dm=\"system none ro,0 1 android-verity /dev/sde43\"
+
 # TWRP specific build flags
 BOARD_HAS_NO_REAL_SDCARD := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
@@ -99,3 +104,5 @@ TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_MAX_BRIGHTNESS := 4095
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_THEME := portrait_hdpi
+TWRP_INCLUDE_LOGCAT := true
+TARGET_USES_LOGD := true
